@@ -3,7 +3,8 @@
 
 // GETTING THE DATE (month/day/year)
 
-  var d = '04/26/2016';                                 // month/day/year TODO: test if January works (00)
+  var d = '01/03/2017';                                 // month/day/year
+  // var d = document.getElementByID("date")[0].value;
 
   var m = [" Jan ", " Feb ", " Mar ", " Apr ", " May ",
            " June ", " July ", " Aug ", " Sept ", " Oct ",
@@ -11,8 +12,7 @@
 
   var month = m[Number(d.substring(0,2)) - 1];          // take month (04) and create index for month array
 
-  var date = d.substring(3,5) + month + d.substring(6); // '24 Apr 2016'
-    // var date_url = date.replace(/%20/g, " ");        // becomes '24%20Apr%202016'
+  var date = d.substring(3,5) + month + d.substring(6); // '24 Apr 2016' -- date.replace(/%20/g, " "); for %20 in between
 
 $('#button').click(function () {
 
