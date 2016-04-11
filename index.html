@@ -17,23 +17,31 @@
     </form><br />
 
     <!-- Date Selection -->
-    <form id="date-form">
+    <form>
+      <h1> Date Selection </h1>
       Date: <br />
       <input id="date" type="text" name="date" />
       <button id="button" type="button"> Check Openings </button><br />
     </form>
+
+    <!-- Openings -->
+    <h2> Openings </h2>
     <br /><div id="title"></div>
-    <ul id="orders"></ul>
+    <ul id="openings"></ul>
 
     <!-- User details input -->
+    <h1> Enter information </h1>
     <form id="form">
-      First Name: <input type="text" name="firstname" /><br />
-      Last Name: <input type="text" name="lastname" /><br />
+      Name: <input type="text" name="firstname" /><br />
       Phone: <input type="text" name="phone" /><br />
       Email: <input type="text" name="email" /><br />
-      Description: <input type="text" name="notes" /><br />
-      <input type="submit" value="Submit" />
+      Notes: <input type="text" name="notes" /><br />
+      <button id="book" type="button"> Book Appointment </button><br />
     </form><br />
+
+    <!-- Booking Confirmation -->
+    <h2> Booking Confirmation </h2>
+    <br /><div id="confirm"></div>
 
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="secrets.js"></script>
