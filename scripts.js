@@ -50,34 +50,47 @@ $('#button').click(function () {
 }); // -- #button.click
 
 // 3) AJAX POST REQUEST TO API
-$('#book').on('click', function() {
+$('#book').click(function() {
 
   var $confirm = $('#confirm');
+  $('#confirm').empty(); // clear field
 
-  $('#confirm').empty();
+  // user input variables
+  var EventScheduleId = $('#eventscheduleid').val();
+  var FirstName = $('#firstname').val();
+  var LastName = $('#lastname').val();
+  var PhoneNumber = $('#phone').val();
+  var Email = $('#email').val();
+  var Description = $('#desc').val();
+  var EventIdentifier = $('#eventid').val();
 
   // json object
   var booking = {
     "ApiToken": key,
-    "BookableItemId": "lorem ipsum",
-    "EventScheduleId": "lorem ipsum",
+    "BookableItemId": id,
+    "EventScheduleId": EventScheduleId,
     "Courtesy": "Mr.",
-    "FirstName": "John",
-    "LastName": "Smith",
-    "PhoneNumber": "123-456-7890",
-    "Email": "fake@fake.com",
-    "Description": "Make my head a soccerball",
-    "EventIdentifier": "lorem ipsum"
+    "FirstName": FirstName,
+    "LastName": LastName,
+    "PhoneNumber": PhoneNumber,
+    "Email": Email,
+    "Description": Description,
+    "EventIdentifier": EventIdentifier
   }; // -- booking
 
   $.ajax({
     type: 'POST',
     url: 'https://sagenda-sagenda-v1.p.mashape.com/Events/SetBooking',
-    headers: {"X-Mashape-Key": header},
+    headers: {
+      "X-Mashape-Key": header
+    },
     data: booking,
     success: function(booked) {
       $confirm.append("<p> Your appointment is booked, Mr. " + booked.LastName + "</p>");
-    } // -- success
+    }, // -- success
+    error: function() {
+      $confirm.append("<p> Sorry! There was an error booking your appointment. Please call us </p>");
+    } // -- error
 
   }); // -- ajax
 }); // -- #book.click
