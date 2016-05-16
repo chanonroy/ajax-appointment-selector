@@ -36,7 +36,7 @@ $('#button').click(function() {
                 $title.append("Sorry, nothing available today!");
             } else { // IF there is something
                 $title.append('Availability for ' + d);
-                checkerDefault(openings);
+                checkerDefault(openings); // for two slots
                 // checkerThree(openings); // for three slots
                 // checkerFour(openings); // for four slots
 
